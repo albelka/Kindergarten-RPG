@@ -45,6 +45,11 @@ namespace Kinder
        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
             app.UseStaticFiles();
             app.UseIdentity();
             app.UseMvc(routes =>
@@ -55,14 +60,10 @@ namespace Kinder
             });
             loggerFactory.AddConsole();
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("You don't have access to this page! Or the page doesn't exist.");
             });
         }
     }

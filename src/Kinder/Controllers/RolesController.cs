@@ -9,11 +9,13 @@ using Microsoft.AspNetCore.Http;
 using Kinder.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Kinder.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class RolesController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -27,6 +29,7 @@ namespace Kinder.Controllers
             _db = db;
         }
         // GET: /<controller>/
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var roles = _db.Roles.ToList();
