@@ -20,6 +20,7 @@ namespace Kinder.Models
         public int Weapon { get; set; } = 0;
         public int Armour { get; set; } = 0;
         public int Potion { get; set; } = 1;
+        public string ImageURI { get; set; }
         public virtual Plunder Plunder { get; set; }
         public virtual ApplicationUser User { get; set; }
 

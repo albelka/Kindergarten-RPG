@@ -16,5 +16,7 @@
 <h3>Colander Hat: @Html.DisplayFor(m => m.Armour)</h3>
 <h3>Squirt Guns: @Html.DisplayFor(m => m.Weapon)</h3>
 
+<img src="~/user-img/@Model.ImageURI" />
+
 @Html.ActionLink("Edit", "Edit", new { id = Model.PlayerId })
 @Html.ActionLink("Delete", "Delete", new { id = Model.PlayerId })

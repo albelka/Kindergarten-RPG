@@ -7,11 +7,13 @@
 
 <h2>Add a new Kindergartener</h2>
 <hr />
-@using (Html.BeginForm())
-{
+
+<form method="post" asp-action="Create" asp-controller="Player" enctype="multipart/form-data">
     @Html.Label("What's your name?")
     @Html.EditorFor(model => model.PlayerName)
 
+    <input type="file" name="files" />
+
     <input type="submit" value="Create" />
-}
+</form>
 

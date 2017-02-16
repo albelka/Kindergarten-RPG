@@ -8,6 +8,10 @@ using Kinder.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using System.Diagnostics;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,11 +22,13 @@ namespace Kinder.Controllers
     {
         private readonly ApplicationDbContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
+        private IHostingEnvironment _environment;
 
-        public PlayerController (UserManager<ApplicationUser> userManager, ApplicationDbContext db)
+        public PlayerController (UserManager<ApplicationUser> userManager, ApplicationDbContext db, IHostingEnvironment environment)
         {
             _userManager = userManager;
             _db = db;
+            _environment = environment;
         }
         // GET: /<controller>/
         public async Task<IActionResult> Index()
@@ -38,11 +44,26 @@ namespace Kinder.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Player player)
+        public async Task<IActionResult> Create(Player player, ICollection<IFormFile> files)
         {
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var currentUser = await _userManager.FindByIdAsync(userId);
             player.User = currentUser;
+            
+
+             var uploads = Path.Combine(_environment.WebRootPath, "user-img");
+
+            var file = files.FirstOrDefault();
+
+            if (file.Length > 0)
+            {
+                using (var fileStream = new FileStream(Path.Combine(uploads, file.FileName), FileMode.Create))
+                {
+                    await file.CopyToAsync(fileStream);
+                }
+            }
+
+            player.ImageURI = file.FileName;
             _db.Players.Add(player);
             _db.SaveChanges();
             return RedirectToAction("Index");
@@ -82,6 +103,28 @@ namespace Kinder.Controllers
             _db.Players.Remove(thisPlayer);
             _db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public IActionResult Upload(int id)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Upload(ICollection<IFormFile> files)
+        {
+            var uploads = Path.Combine(_environment.WebRootPath, "user-img");
+            foreach (var file in files)
+            {
+                if (file.Length > 0)
+                {
+                    using (var fileStream = new FileStream(Path.Combine(uploads, file.FileName), FileMode.Create))
+                    {
+                        await file.CopyToAsync(fileStream);
+                    }
+                }
+            }
+            return View("Upload");
         }
     }
 }
