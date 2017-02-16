@@ -14,9 +14,9 @@ namespace Kinder.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly ApplicationDbContext _db;
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
+        public ApplicationDbContext _db { get; private set; }
+        public UserManager<ApplicationUser> _userManager { get; private set; }
+        public SignInManager<ApplicationUser> _signInManager { get; private set; }
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ApplicationDbContext db)
         {

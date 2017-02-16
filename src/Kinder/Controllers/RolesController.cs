@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using Kinder.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,9 +17,13 @@ namespace Kinder.Controllers
     public class RolesController : Controller
     {
         private readonly ApplicationDbContext _db;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public RolesController(ApplicationDbContext db)
+        public RolesController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ApplicationDbContext db)
         {
+            _userManager = userManager;
+            _signInManager = signInManager;
             _db = db;
         }
         // GET: /<controller>/
@@ -87,5 +92,70 @@ namespace Kinder.Controllers
                 return View();
             }
         }
+
+        public IActionResult Manage()
+        {
+            var list = _db.Roles.OrderBy(r => r.Name).ToList().Select(rr =>
+                new SelectListItem { Value = rr.Name.ToString(), Text = rr.Name }).ToList();
+            ViewBag.Roles = list;
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddRoleToUser(string userName, string roleName)
+        {
+            ApplicationUser user = _db.Users.Where(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+            await _userManager.AddToRoleAsync(user, roleName);
+
+            ViewBag.ResultMessage = "Role created successfully!";
+
+            var list = _db.Roles.OrderBy(r => r.Name).ToList().Select(rr =>
+                new SelectListItem { Value = rr.Name.ToString(), Text = rr.Name }).ToList();
+            ViewBag.Roles = list;
+            return View("Manage");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> GetRoles(string UserName)
+        {
+            if(!string.IsNullOrWhiteSpace(UserName))
+            {
+                ApplicationUser user = _db.Users.Where(u => u.UserName.Equals(UserName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+
+                ViewBag.RolesForThisUser = await _userManager.GetRolesAsync(user);
+
+                var list = _db.Roles.OrderBy(r => r.Name).ToList().Select(rr => new SelectListItem { Value = rr.Name.ToString(), Text = rr.Name }).ToList();
+
+                ViewBag.Roles = list;
+
+            }
+            return View("Manage");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteRoleForUser(string UserName, string RoleName)
+        {
+            ApplicationUser user = _db.Users.Where(u => u.UserName.Equals(UserName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+            bool inRole = await _userManager.IsInRoleAsync(user, RoleName);
+            if (inRole)
+            {
+                await _userManager.RemoveFromRoleAsync(user, RoleName);
+                ViewBag.ResultMessage = "Role removed from this user successfully!";
+            }
+            else
+            {
+                ViewBag.ResultMessage = "This user doesn't belong to selected role.";
+            }
+
+            var list = _db.Roles.OrderBy(r => r.Name).ToList().Select(rr => new SelectListItem { Value = rr.Name.ToString(), Text = rr.Name }).ToList();
+
+            ViewBag.Roles = list;
+
+            return View("Manage");
+        }
+
     }
 }
