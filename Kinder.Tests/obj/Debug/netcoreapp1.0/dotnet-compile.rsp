@@ -1,5 +1,5 @@
---temp-output:c:\Users\epicodus\documents\visual studio 2015\Projects\Kinder\Kinder.Tests\obj\Debug\netcoreapp1.0\
---out:c:\Users\epicodus\documents\visual studio 2015\Projects\Kinder\Kinder.Tests\bin\Debug\netcoreapp1.0\Kinder.Tests.dll
+--temp-output:C:\Users\epicodus\Desktop\clone\Kindergarten-RPG\Kinder.Tests\obj\Debug\netcoreapp1.0\
+--out:C:\Users\epicodus\Desktop\clone\Kindergarten-RPG\Kinder.Tests\bin\Debug\netcoreapp1.0\Kinder.Tests.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -13,7 +13,7 @@
 --informational-version:1.0.0
 --target-framework:.NETCoreApp,Version=v1.0
 --reference:C:\Users\epicodus\.nuget\packages\dotnet-test-xunit\2.2.0-preview2-build1029\lib\netcoreapp1.0\dotnet-test-xunit.dll
---reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll
+--reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.1\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Authentication\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Authentication.Cookies\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.Cookies.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Authorization\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authorization.dll
@@ -38,23 +38,24 @@
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.JsonPatch\1.0.0\lib\netstandard1.1\Microsoft.AspNetCore.JsonPatch.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Localization\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Localization.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc\1.0.0\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.dll
---reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.Abstractions\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Mvc.Abstractions.dll
+--reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.Abstractions\1.0.1\lib\netstandard1.3\Microsoft.AspNetCore.Mvc.Abstractions.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.ApiExplorer\1.0.0\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
---reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.Core\1.0.0\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Core.dll
+--reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.Core\1.0.1\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Core.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.Cors\1.0.0\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Cors.dll
---reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.DataAnnotations\1.0.0\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
---reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.Formatters.Json\1.0.0\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+--reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.DataAnnotations\1.0.1\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+--reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.Formatters.Json\1.0.1\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.Localization\1.0.0\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Localization.dll
---reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.Razor\1.0.0\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Razor.dll
---reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.Razor.Host\1.0.0\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Razor.Host.dll
---reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.TagHelpers\1.0.0\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.TagHelpers.dll
---reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.ViewFeatures\1.0.0\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+--reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.Razor\1.0.1\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Razor.dll
+--reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.Razor.Host\1.0.1\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Razor.Host.dll
+--reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.TagHelpers\1.0.1\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+--reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Mvc.ViewFeatures\1.0.1\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Razor\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Razor.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Razor.Runtime\1.0.0\lib\netstandard1.5\Microsoft.AspNetCore.Razor.Runtime.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Routing\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Routing.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Routing.Abstractions\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Routing.Abstractions.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Server.IISIntegration\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Server.IISIntegration.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.Server.Kestrel\1.0.1\lib\netstandard1.3\Microsoft.AspNetCore.Server.Kestrel.dll
+--reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.StaticFiles\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.StaticFiles.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.AspNetCore.WebUtilities\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.WebUtilities.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.CodeAnalysis.Common\1.3.0\lib\netstandard1.3\Microsoft.CodeAnalysis.dll
 --reference:C:\Users\epicodus\.nuget\packages\Microsoft.CodeAnalysis.CSharp\1.3.0\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.dll
@@ -194,7 +195,7 @@
 --reference:C:\Users\epicodus\.nuget\packages\xunit.extensibility.execution\2.1.0\lib\dotnet\xunit.execution.dotnet.dll
 --reference:C:\Users\epicodus\.nuget\packages\xunit.runner.reporters\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.reporters.dotnet.dll
 --reference:C:\Users\epicodus\.nuget\packages\xunit.runner.utility\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.utility.dotnet.dll
---reference:c:\Users\epicodus\documents\visual studio 2015\Projects\Kinder\src\Kinder\bin\Debug\netcoreapp1.0\Kinder.dll
-c:\Users\epicodus\documents\visual studio 2015\Projects\Kinder\Kinder.Tests\Class1.cs
-c:\Users\epicodus\documents\visual studio 2015\Projects\Kinder\Kinder.Tests\UserTest.cs
-c:\Users\epicodus\documents\visual studio 2015\Projects\Kinder\Kinder.Tests\Properties\AssemblyInfo.cs
+--reference:C:\Users\epicodus\Desktop\clone\Kindergarten-RPG\src\Kinder\bin\Debug\netcoreapp1.0\Kinder.dll
+C:\Users\epicodus\Desktop\clone\Kindergarten-RPG\Kinder.Tests\ControllerTests\PlayerControllerTest.cs
+C:\Users\epicodus\Desktop\clone\Kindergarten-RPG\Kinder.Tests\ModelTests\UserTest.cs
+C:\Users\epicodus\Desktop\clone\Kindergarten-RPG\Kinder.Tests\Properties\AssemblyInfo.cs
