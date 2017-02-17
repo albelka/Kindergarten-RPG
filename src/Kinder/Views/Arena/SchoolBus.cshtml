@@ -1,5 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Player Bus";
+    Layout = "~/Views/Shared/_GameLayout.cshtml";
 }
+
+@model Kinder.Models.Player
+
+<h3>Oh no! First graders. They try to steal your lunch.</h3>
+
+<img src="~/img/firstgraders.jpg" />
+
+
+
+@if (ViewBag.foe != null)
+{
+    if (ViewBag.foe.FoeHP <= 0)
+    {
+        <p>You vanquish your foe!</p>
+    }
+}
+<br />
+<a asp-action="@ViewBag.nextLocation">Battle the First-graders</a>
+
+<hr />
+@if (ViewBag.foe != null)
+{
+    <p>Foe Hp:</p> @ViewBag.foe.FoeHP;
+}
+<hr />

@@ -1,6 +1,12 @@
 ﻿@{
     ViewData["Title"] = "Player Home";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_GameLayout.cshtml";
 }
 
 @model Kinder.Models.Player
+
+<h3>Time to get on the bus.</h3>
+
+<img src="~/img/bus.png" />
+
+<a asp-action="SchoolBus" asp-route-id="@Model.PlayerId">Get on the bus</a>

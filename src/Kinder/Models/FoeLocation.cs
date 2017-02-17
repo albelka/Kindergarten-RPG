@@ -6,6 +6,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Kinder.Models
+
+
 {
     [Table("FoeLocations")]
     public class FoeLocation
@@ -18,5 +20,15 @@ namespace Kinder.Models
         public int FoeHP { get; set; }
         public int PlunderId { get; set; }
         public virtual Plunder Plunder { get; set; }
+
+        public FoeLocation(int Id, string location, string name, int attack, int hp)
+        {
+            FoeLocationId = Id;
+            LocationName = location;
+            FoeName = name;
+            FoeAttack = attack;
+            FoeHP = hp;
+            PlunderId = 0;
+        }
     }
 }

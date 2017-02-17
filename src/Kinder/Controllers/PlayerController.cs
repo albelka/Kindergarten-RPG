@@ -24,12 +24,14 @@ namespace Kinder.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private IHostingEnvironment _environment;
 
-        public PlayerController (UserManager<ApplicationUser> userManager, ApplicationDbContext db, IHostingEnvironment environment)
+        public PlayerController(UserManager<ApplicationUser> userManager, ApplicationDbContext db, IHostingEnvironment environment)
         {
             _userManager = userManager;
             _db = db;
             _environment = environment;
         }
+
+
         // GET: /<controller>/
         public async Task<IActionResult> Index()
         {

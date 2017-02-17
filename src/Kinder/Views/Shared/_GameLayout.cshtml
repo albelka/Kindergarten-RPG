@@ -1,0 +1,30 @@
+﻿@model Kinder.Models.Player
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="player-info">
+        <h1>@Html.DisplayFor(m => m.PlayerName)</h1>
+        <hr />
+        <h3>
+            Hit Points: @Html.DisplayFor(m => m.PlayerHP) |
+            Attack: @Html.DisplayFor(m => m.PlayerAttack) |
+            Defense: @Html.DisplayFor(m => m.PlayerDefense) |
+            Juice Boxes: @Html.DisplayFor(m => m.Potion) |
+            Blankies: @Html.DisplayFor(m => m.Shield) |
+            Colander Hat: @Html.DisplayFor(m => m.Armour) |
+            Squirt Guns: @Html.DisplayFor(m => m.Weapon)
+        </h3>
+    </div>
+    <hr />
+    <div>
+        @RenderBody()
+    </div>
+
+</body>
+</html>
